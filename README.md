@@ -1,8 +1,8 @@
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/big-data-europe/docker-hadoop-spark-workbench)
 
-# How to use HDFS/Spark Workbench
+# How to use HDFS/Spark All in one
 
-To start an HDFS/Spark Workbench:
+To start an HDFS/Spark:
 ```
     docker-compose up -d
 ```
@@ -31,9 +31,6 @@ docker-compose -f docker-compose-hive.yml up -d spark-master spark-worker spark-
 
 When opening Hue, you might encounter ```NoReverseMatch: u'about' is not a registered namespace``` error after login. I disabled 'about' page (which is default one), because it caused docker container to hang. To access Hue when you have such an error, you need to append /home to your URI: ```http://docker-host-ip:8088/home```
 
-## Docs
-* [Motivation behind the repo and an example usage @BDE2020 Blog](http://www.big-data-europe.eu/scalable-sparkhdfs-workbench-using-docker/)
-
 ## Count Example for Spark Notebooks
 ```
 val spark = SparkSession
@@ -44,8 +41,3 @@ val spark = SparkSession
 val tf = spark.read.textFile("/data.csv")
 tf.count()
 ```
-
-## Maintainer
-* Ivan Ermilov @earthquakesan
-
-Note: this repository was a part of BDE H2020 EU project and no longer actively maintained by the project participants. 
